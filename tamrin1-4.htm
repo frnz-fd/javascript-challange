@@ -1,0 +1,45 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <p id="frnz">farnaz</p>
+    <p id="frnsh">farnoosh</p>
+    <script>
+
+        let Users=['farnaz','farnoosh'];
+
+
+
+        var iterator = Users.values();
+        for (let elements of iterator) {
+        console.log(elements);
+        }
+
+
+        const p = document.getElementById('frnz');
+        function getUserById(Users, obj) {
+        for (var i = 0; i < Users.length; i++) {
+        if (Users[i] === obj) {
+            console.log(p);
+        }
+        }
+        return user not found;
+    }
+
+    
+    function createUsers(name,id) {
+    Users.push(name,id);
+    Users.sort();
+    }
+        
+
+
+
+    </script>
+</body>
+</html>
