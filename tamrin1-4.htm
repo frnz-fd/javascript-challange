@@ -11,16 +11,21 @@
     <p id="frnsh">farnoosh</p>
     <script>
 
+        
+    /*my array*/
         let Users=['farnaz','farnoosh'];
 
 
+        /* show all users*/
 
-        var iterator = Users.values();
-        for (let elements of iterator) {
-        console.log(elements);
-        }
+        const Users = Users.map(UsersItem => 
+        {
+        return UsersItem * 2
+        })
+        console.log(Users);
 
 
+        /* get user by id*/
         const p = document.getElementById('frnz');
         function getUserById(Users, obj) {
         for (var i = 0; i < Users.length; i++) {
@@ -29,14 +34,23 @@
         }
         }
         return user not found;
-    }
+        }
 
-    
-    function createUsers(name,id) {
-    Users.push(name,id);
-    Users.sort();
-    }
+        /*create users*/
+        function createUsers(name,id) {
+        Users.push(name,id);
+        Users.sort();
+        }
         
+        /*edit user*/
+        
+        var specificUser =  Users.filter(function(Users) {
+        return Users.habitat == "farnaz";
+        });
+
+        console.log(specificUser);
+
+
 
 
 
