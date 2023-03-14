@@ -6,54 +6,61 @@
     <title>Document</title>
 </head>
 <body>
-
-    <p id="frnz">farnaz</p>
-    <p id="frnsh">farnoosh</p>
     <script>
 
         
-    /*my array*/
-        let Users=['farnaz','farnoosh'];
+   /*my array*/
+        let users=[
+            { name : 'farnaz' , id=1},
+            { name : 'farnoosh' , id=2}
+        ];
 
 
         /* show all users*/
+        const users = users.map(UsersItem => 
+        { return usersItem })
+        console.log(users); /*Is this part right?*/
 
-        const Users = Users.map(UsersItem => 
-        {
-        return UsersItem * 2
-        })
-        console.log(Users);
+
+        function ShowAllUsers() {
+        for(const user of users) {
+        console.log("id : " + user.id + "first name : " + user.firstName)
+        }
+        }
 
 
         /* get user by id*/
-        const p = document.getElementById('frnz');
-        function getUserById(Users, obj) {
-        for (var i = 0; i < Users.length; i++) {
-        if (Users[i] === obj) {
-            console.log(p);
+        for (let i = 0; i < users.length; i++) {
+        if (users[i].id===id) return users[i];
         }
-        }
-        return user not found;
-        }
+        return "user not found";
+
+
 
         /*create users*/
-        function createUsers(name,id) {
-        Users.push(name,id);
-        Users.sort();
+        function CreateUsers(name,id) {
+        users.push({name,id});
+        
         }
         
+
+
         /*edit user*/
-        
-        var specificUser =  Users.filter(function(Users) {
+        var specificUser =  users.filter(function(Users) {
         return Users.habitat == "farnaz";
         });
-
         console.log(specificUser);
 
 
-
-
-
+        function editUser(id, firstName) {
+        for (let i = 0; i < users.length; i++) {
+        if (users[i].id === id) {
+            users[i].firstName = firstName;
+            return users;}
+        }
+        return "user not found";
+        }
+        
     </script>
 </body>
 </html>
